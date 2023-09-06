@@ -1,0 +1,42 @@
+@use '../../../assets/scss/' as *;
+
+.table_wrapper{
+      width: 100%;
+      border-radius: 11px;
+      overflow: hidden;
+
+      @include tablet {
+         overflow-x: scroll;
+      }
+
+      h1 {
+         margin-bottom: 15px;
+      }
+
+      table {
+         border-collapse: collapse;
+         width: 100%;
+         min-height: 20vh;
+
+         td,
+         th {
+            background-color: #fff;
+            color: #3a3a3a;
+            padding: 20px 10px;
+            text-align: center;
+            width: 15vw;
+         }
+
+         th {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.24);
+         }
+
+         tr:not(:last-child) {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.24);
+         }
+
+         tr {
+            height: 30px;
+         }
+      }
+}

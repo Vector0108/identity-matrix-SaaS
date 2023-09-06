@@ -1,0 +1,38 @@
+@use '../../assets/scss/' as *;
+
+.container {
+	@include flex(center, center);
+	height: 100vh;
+	text-align: center;
+	padding: 15px;
+
+	&_elements {
+		@include flex(center, center, 15px, column);
+		color: $txt-color;
+
+		&_icon {
+			background-color: #fff;
+			padding: 27px;
+			border-radius: 20px;
+
+			@include mobile {
+				padding: 15px;
+			}
+		}
+
+		h1 {
+			@include mobile {
+				font-size: 27px;
+			}
+		}
+
+		p {
+			font-size: 14px;
+
+			a {
+				color: $main-color;
+				text-decoration: underline;
+			}
+		}
+	}
+}

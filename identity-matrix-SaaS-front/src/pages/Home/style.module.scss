@@ -1,0 +1,173 @@
+@use "../../assets/scss/" as *;
+
+.container {
+  min-height: calc(100vh - $header-height);
+  @include flex(center, center, 30px, column);
+  padding: 80px 20px;
+  
+  .box_row{
+    display: flex;
+    gap: 20px;
+    flex-direction: row-reverse;
+    width: 100%;
+    max-width: $container-width;
+
+    @include tablet{
+      flex-direction: column;
+    }
+  }
+
+  .box {
+    @include flex(center, center, 15px, column);
+    width: 100%;
+    margin: 0 auto;
+    padding: 33px;
+    border: 1px solid #fff;
+    border-radius: 11px;
+    color: $txt-color;
+
+    .title {
+      font-size: 41px;
+      text-align: center;
+
+      @include mobile {
+        font-size: 32px;
+      }
+    }
+
+    .subtitle {
+      font-size: 18px;
+    }
+
+    .btns {
+      width: 100%;
+      max-width: 200px;
+      @include flex(center, center, 10px, row);
+    }
+
+    &_single{
+      border: 1px solid #fff;
+      width: 50%;
+      border-radius: 11px;
+      padding: 33px;
+      @include tablet{
+        width: 100%;
+      }
+    }
+
+    &_cont {
+      @include flex(flex-end, space-between, 20px, row);
+      width: 100%;
+
+      @include mobile {
+        flex-direction: column;
+        align-items: end;
+      }
+    }
+
+    .btn_templ {
+      @include flex(center, space-between, 10px, row);
+
+      &_buttons{
+        display: flex;
+        flex: 1 1;
+        gap: 10px;
+        max-width: 350px;
+        text-align: center;
+        
+        @include tablet{
+          flex-direction: column;
+          max-width: 200px;
+        }
+      }
+    }
+
+    .btn_cont {
+      width: 100%;
+
+      // max-width: 200px;
+      align-self: end;
+      display: flex;
+
+      .btn {
+        width: 100%;
+        padding: 10px 15px;
+        background-color: $button-main-color;
+        outline: none;
+        border: none;
+        border-radius: 11px;
+        font-size: 14px;
+        font-weight: 400;
+        color: white;
+        cursor: pointer;
+
+        &_disable {
+          background-color: rgba(245, 245, 245, 0.39);
+          color: rgba(245, 245, 245, 0.39);
+          cursor: default;
+        }
+      }
+
+      input {
+        display: none;
+      }
+    }
+
+    .lists_cont {
+      @include flex(center, flex-start, 10px, column);
+      width: 100%;
+      min-height: 50vh;
+
+      &_item {
+        width: 100%;
+        padding: 20px;
+        border-top: 1px solid #fff;
+
+        @include mobile {
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  .second_box {
+    width: 100%;
+    min-height: 63vh;
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 33px;
+    border: 1px solid #fff;
+    border-radius: 11px;
+    color: $txt-color;
+
+    &_title {
+      color: #fff;
+      text-align: center;
+      border-bottom: 1px solid #fff;
+      padding-bottom: 20px;
+      margin-bottom: 15px;
+    }
+
+    &_search {
+      padding: 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      // @include flex(center, flex-end);
+
+      input {
+        border: none;
+        padding: 10px 15px;
+        border-radius: 20px;
+      }
+    }
+  }
+}
+
+.line {
+  width: 100%;
+  border-bottom: 1px solid white;
+  text-align: center;
+  color: white;
+  margin-bottom: 15px;
+}

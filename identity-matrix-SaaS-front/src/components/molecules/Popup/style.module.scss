@@ -1,0 +1,88 @@
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 99;
+
+  &_body {
+    position: absolute;
+    left: 30%;
+    right: 30%;
+    bottom: 30%;
+    top: 30%;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 35px;
+    gap: 20px;
+    border-radius: 15px;
+    border-color: black;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: black;
+    animation-name: animatetop;
+    animation-duration: 1s;
+
+    p {
+      max-width: 300px;
+    }
+  }
+}
+
+.wrapper{
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+.closeAnimation {
+    animation-name: animateClose;
+    animation-duration: 1s;
+}
+
+@-webkit-keyframes animatetop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes animateClose {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes animateClose {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }

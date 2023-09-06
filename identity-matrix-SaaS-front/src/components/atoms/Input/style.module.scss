@@ -1,0 +1,26 @@
+@use '../../../assets/scss/' as *;
+
+.input_container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	.input {
+		background-color: #f5f5fc;
+		border-radius: 6px;
+		border: none;
+		padding: 15px 20px;
+		font-size: 14px;
+		width: 100%;
+	}
+
+	.error {
+		border: 1px solid $error-color;
+	}
+
+	.error_message {
+		color: $error-color;
+		font-size: 13px;
+		margin-left: 3px;
+	}
+}

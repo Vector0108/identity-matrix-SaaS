@@ -1,0 +1,150 @@
+@use '../../assets/scss/' as *;
+
+.container {
+	@include flex(center, center);
+	width: 100%;
+	color: $txt-color;
+	padding: 10px 0;
+
+	&_elements {
+		@include flex(flex-start, center, 40px, column);
+		width: 100%;
+		max-width: 500px;
+
+		@include mobile {
+			gap: 20px;
+		}
+	}
+
+
+	&_select {
+		@include flex(center, center, 10px, column);
+		width: 100%;
+		text-align: center;
+
+		.input_container{
+			width: 100%;
+			padding: 20px 0;
+			@include flex(center, center, 10px, column);
+
+			&_result{
+				width: 100%;
+				@include flex(center, center, 20px);
+				padding-top: 20px;
+				font-size: 18px;
+				text-align: center;
+
+				&_credits{
+					width: 100%;
+					@include flex(center, center	);
+					background-color: #f5f5fc;
+					border-radius: 11px;
+					padding: 10px 15px;
+					color: #525252;
+					position: relative;
+				}
+
+				&_input{
+					width: 7vw;
+					border: none;
+					background-color: #f5f5fc;
+					text-align: center;
+					font-size: 20px;
+				}
+
+				&_price{
+					@include flex(center, center);
+					width: 100%;
+					border-radius: 11px;
+					padding: 10px 15px;
+					border: 1px solid $main-color;
+					font-size: 20px;
+					:first-child{
+						width: 7vw;
+					}
+					:last-child{
+						color: #afafaf;
+					}
+				}
+			}
+
+			&_error{
+				position: absolute;
+				top: 110%;
+				color: $error-color;
+				font-size: 13px;
+				margin-left: 3px;
+			}
+		}
+
+		&_inputBox {
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+			width: 100%;
+
+			&_box {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 10px;
+				span {
+					width: 100%;
+				}
+			}
+		
+			input {
+				background-color: #f5f5fc;
+				border-radius: 6px;
+				border: none;
+				padding: 15px 20px;
+				font-size: 14px;
+				width: 100%;
+			}
+		
+			.error {
+				border: 1px solid $error-color;
+			}
+		
+			p {
+				color: $error-color;
+				font-size: 13px;
+				margin-left: 3px;
+			}
+		}
+
+		// select {
+		// 	width: 100%;
+		// 	padding: 15px 10px;
+		// 	border-radius: 5px;
+		// 	outline: none;
+		// 	cursor: pointer;
+		// 	margin-top: 20px;
+		// 	font-size: 16px;
+
+		// 	option {
+		// 		font-size: 18px;
+		// 	}
+
+		// 	-webkit-appearance: none;
+		// 	-moz-appearance: none;
+		// 	background: white;
+		// 	background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+		// 	background-repeat: no-repeat;
+		// 	background-position-x: 98%;
+		// 	background-position-y: 11px;
+		// 	border-radius: 2px;
+		// 	// margin-right: 2rem;
+		// 	// padding: 1rem;
+		// 	// padding-right: 2rem;
+		 
+		// }
+	}
+
+	&_payment {
+		width: 100%;
+		h2 {
+			margin-bottom: 15px;
+		}
+	}
+}

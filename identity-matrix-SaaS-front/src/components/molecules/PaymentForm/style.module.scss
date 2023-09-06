@@ -1,0 +1,128 @@
+@use "../../../assets/scss/" as *;
+
+.active {
+  background-color: #cbcaff88;
+  border: 1px solid $main-color;
+}
+.disabled {
+  background-color: #babac2bd;
+}
+
+.container {
+  width: 100%;
+  padding: 20px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 8px 6px #00000044;
+  background-color: $body-bg;
+
+  .card {
+    @include flex(center, space-between);
+    padding: 20px;
+    // border: 1px solid $main-color;
+    border: 1px solid grey;
+    border-radius: 20px;
+    margin: 20px 0;
+    cursor: pointer;
+    width: 100%;
+
+    &_active {
+      cursor: pointer;
+      color: grey;
+      background-color: #ffffffe1;
+    }
+
+    &_selected {
+      border: 1px solid $main-color;
+      color: rgb(83, 83, 83);
+      font-weight: 600;
+    }
+  }
+
+  .payment_form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+
+    .save {
+      display: flex;
+      gap: 10px;
+      label,
+      input {
+        cursor: pointer;
+      }
+    }
+
+    .formGroup {
+      width: 100%;
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      border: 1px solid #d7e2e2;
+      background-color: #f6f9f9;
+      padding: 18px;
+      border-radius: 5px;
+
+      path {
+        fill: $main-color;
+      }
+
+      @include mobile {
+        padding: 8px 16px;
+      }
+    }
+
+    .error {
+      border: 1px solid $error-color;
+
+      path {
+        fill: $error-color;
+      }
+    }
+
+    .group {
+      display: flex;
+      gap: 15px;
+
+      @include mobile {
+        flex-direction: column;
+      }
+    }
+
+    .button-container {
+      @include mobile {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 16px;
+        margin-top: 0;
+
+        button {
+          padding: 8px;
+        }
+      }
+    }
+
+    .buttons {
+      @include flex(center, center, 10px);
+    }
+
+    .formRow {
+      width: 100%;
+    }
+  }
+}
+
+.cardItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  &_delete {
+    cursor: pointer;
+
+    svg {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}

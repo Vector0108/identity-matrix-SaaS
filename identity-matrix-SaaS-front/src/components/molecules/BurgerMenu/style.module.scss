@@ -1,0 +1,94 @@
+@use "../../../assets/scss/" as *;
+
+.burger {
+  &_openBtn {
+    background-color: transparent;
+    border: none;
+    &_lines {
+      margin: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.313rem;
+      cursor: pointer;
+      &_line {
+        height: 0.063rem;
+        border-radius: 0.938rem;
+        background-color: $main-color;
+
+        &:nth-last-child(1) {
+          width: 1.75rem;
+        }
+
+        &:nth-child(1) {
+          width: 1.75rem;
+          margin-left: 0.75rem;
+        }
+      }
+      &:active {
+        .burger_openBtn_lines_line {
+          background-color: $main-color;
+        }
+      }
+    }
+  }
+
+  .wrapper{
+    @include flex(center, center);
+  }
+
+  &_popup {
+    background-color: rgb(37, 40, 54, 0.7);
+    height: 70vh;
+    width: max-content;
+    position: static;
+  }
+
+  &_menu {
+    z-index: 10000;
+    background-color: $main-color;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+
+    &_items {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      margin: auto;
+      gap: 1rem;
+      height: 100%;
+      width: fit-content;
+      a {
+        color: white !important;
+      }
+    }
+
+    &_closeBtn {
+      background-color: transparent;
+      border: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 1.5rem;
+      cursor: pointer;
+      svg {
+        width: 1.875rem;
+        height: 1.875rem;
+      }
+    }
+
+    &.open {
+      transform: translateX(0);
+      transition: transform 0.4s ease-in-out;
+    }
+
+    &.close {
+      transform: translateX(100%);
+      transition: transform 0.4s ease-in-out;
+    }
+  }
+}

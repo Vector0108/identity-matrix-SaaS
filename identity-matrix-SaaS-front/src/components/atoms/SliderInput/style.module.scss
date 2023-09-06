@@ -1,0 +1,129 @@
+@use '../../../assets/scss/' as *;
+
+$thumb-radius: 7px;
+$thumb-radius-scale: 3;
+$theme-color-dark: #545454;
+$track-height: 5px;
+$border-radius: 3px;
+$bottom-border: 4px;
+$slider-padding: 15px;
+$rule-height: 6px;
+$rule-color: #cccccc;
+
+@mixin thumb {
+	position: relative;
+	height: $thumb-radius;
+	width: $thumb-radius;
+	transform: scale($thumb-radius-scale);
+	margin-top: -$thumb-radius/2 + $track-height/2;
+	border-radius: 500px;
+	background: $main-color;
+	border: 0;
+	cursor: pointer;
+	z-index: 2;
+}
+
+@mixin track {
+	background-color: $theme-color-dark;
+	height: $track-height;
+	border-radius: $border-radius;
+}
+
+.no-selection {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+input[type='range'] {
+	width: 100%;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	height: $slider-padding * 2 + $track-height;
+	background: transparent;
+	position: relative;
+	cursor: pointer;
+	background: linear-gradient(
+				90deg,
+				$rule-color 1px,
+				rgba(238, 238, 238, 0) 1px
+			)
+			repeat-x content-box,
+		linear-gradient(90deg, $rule-color 1px, rgba(238, 238, 238, 0) 1px)
+			repeat-x content-box;
+	background-size: 25% $rule-height, calc(100% - 5px) $rule-height * 2;
+	background-position: 1px 30%, 1px 20%;
+	padding: 0 $slider-padding;
+	overflow: visible;
+
+	&::-webkit-slider-thumb {
+		@include thumb();
+		-webkit-appearance: none;
+	}
+	&::-moz-range-thumb {
+		@include thumb();
+	}
+	&::-ms-thumb {
+		@include thumb();
+		transform: none;
+		margin-top: -2px;
+		height: $thumb-radius * $thumb-radius-scale;
+		width: $thumb-radius * $thumb-radius-scale;
+		border-radius: $thumb-radius * $thumb-radius-scale;
+	}
+
+	&::-webkit-slider-runnable-track {
+		@include track();
+		&::-moz-range-track {
+			@include track();
+		}
+		&::-ms-track {
+			background: transparent;
+			border-color: transparent;
+			color: transparent;
+		}
+		&::-ms-fill-lower {
+			@include track();
+			background-color: $main-color;
+		}
+		&::-ms-fill-upper {
+			@include track();
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+}
+
+@mixin legend-text() {
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	color: $rule-color;
+	margin-top: -$slider-padding - $bottom-border + 1px;
+}
+
+.range_box {
+	width: 100%;
+	position: relative;
+	background-color: #f4f4f4;
+	padding: 0;
+	overflow: visible;
+	border-radius: 11px;
+
+	&_min {
+		@include legend-text();
+		float: left;
+		margin-left: $slider-padding - 2px;
+		font-size: 13px;
+	}
+	&_max {
+		@include legend-text();
+		float: right;
+		margin-right: $slider-padding - 4px;
+		font-size: 13px;
+	}
+}

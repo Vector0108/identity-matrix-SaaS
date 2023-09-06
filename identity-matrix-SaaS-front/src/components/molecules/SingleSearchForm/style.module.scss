@@ -1,0 +1,97 @@
+@use "../../../assets/scss/" as *;
+
+.box {
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 11px;
+  color: $txt-color;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .error {
+    color: $error-color;
+    font-size: 13px;
+    margin-left: 3px;
+    margin-top: -10px;
+  }
+
+  &_tabs {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    background-color: $body-bg !important;
+    margin-bottom: 20px;
+
+    &_active {
+      border-bottom: 1px solid #813efb;
+    }
+    &_tab {
+      width: 100%;
+      cursor: pointer;
+      padding: 1vw 35px;
+      text-align: center;
+
+      @include mobile {
+        width: 30%;
+        padding: 0;
+      }
+    }
+  }
+
+  .description {
+    font-size: 14px;
+    color: rgba(255, 247, 247, 0.836);
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .line {
+    width: 100%;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.336);
+    text-align: center;
+    color: rgba(175, 175, 175, 0.863);
+  }
+
+  &_inputs_row {
+    @include flex(center, center, 15px);
+    width: 100%;
+  }
+
+  &_inputs_half {
+    width: 50%;
+  }
+
+  form {
+    @include flex(center, center, 15px, column);
+    position: relative;
+    width: 100%;
+
+    button {
+      width: max-content;
+    }
+    @include mobile {
+      flex-direction: column;
+      button {
+        width: 100%;
+      }
+    }
+  }
+
+  @include mobile {
+    &_button {
+      width: 100%;
+    }
+  }
+}
+
+
+.horizontalData {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  button {
+    width: max-content;
+  }
+}

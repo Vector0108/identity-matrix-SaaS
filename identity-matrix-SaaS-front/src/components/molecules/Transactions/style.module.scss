@@ -1,0 +1,69 @@
+@use "/src/assets/scss/" as *;
+
+.container {
+  color: $txt-color;
+  // padding: 30px;
+  margin-bottom: 20px;
+
+  @include tablet {
+    padding: 40px;
+  }
+
+  @include mobile {
+    padding: 20px;
+  }
+
+  .elements {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+
+    &_table {
+      tbody {
+        display: block;
+        height: 30vw;
+        overflow: auto;
+        overflow-x: hidden;
+      }
+
+      thead, tbody tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;/* even columns width , fix width of table too*/
+    }
+    thead {
+        width: calc( 100% - 1em )/* scrollbar is average 1em/16px width, remove it from thead width */
+    }
+    table {
+      width: 20vw
+    }
+    }
+
+    &_balance {
+      @include flex(center, space-between, 5px);
+      width: max-content;
+      padding: 30px;
+      border: 1px solid #babac2bd;
+      background-color: #fff;
+      color: #000;
+      border-radius: 11px;
+      height: 40px;
+
+      .item {
+        @include flex(flex-end, center, 4px);
+
+        &_icon {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      &_credits {
+        font-weight: 700;
+        font-size: 20px;
+      }
+    }
+  }
+}

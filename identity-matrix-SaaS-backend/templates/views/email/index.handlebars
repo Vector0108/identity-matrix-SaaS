@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification</title>
+    <style>
+        body, h1, h2, h3, p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: #f4f4f4;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #333333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            color: #555555;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            color: #777777;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #813efb;
+            color: #ffffff!important;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Email Verification</h1>
+        <h2>Hello, {{ name }}!</h2>
+        <p>Thank you for signing up. To complete your registration, please click the button below to verify your email address:</p>
+        <a href="{{ verificationLink }}" target="_blank" class="btn">Verify Email</a>
+        <p style="margin-top: 5px;"><span style="color: red;">Important!</span> If you didn't sign up for our service, you can safely ignore this email.</p>
+    </div>
+</body>
+</html>

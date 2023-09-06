@@ -1,0 +1,65 @@
+@use "../../assets/scss/" as *;
+
+.signup_container {
+  @include flex(center, center, 30px, column);
+  width: 100%;
+  height: 100vh;
+  color: $txt-color;
+  padding: 30px;
+
+  .form_wrapper {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .logo {
+    width: 200px;
+
+    .img {
+      width: 100%;
+      object-fit: contain;
+      cursor: pointer;
+    }
+  }
+
+  .form {
+    @include flex(center, center, 20px, column);
+
+    .title {
+      font-size: 34px;
+      color: $txt-color;
+      text-align: center;
+    }
+
+    .inputs {
+      @include flex(center, center, 10px, column);
+      width: 100%;
+
+      &_row {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        width: 100%;
+      }
+    }
+
+    .button_wrapper {
+      width: 100%;
+    }
+
+    .desc {
+      font-size: 13px;
+
+      .link {
+        color: $main-color;
+      }
+    }
+    .linkForgot {
+      color: $main-color;
+    }
+  }
+}
+
+.input {
+  background-color: black;
+}

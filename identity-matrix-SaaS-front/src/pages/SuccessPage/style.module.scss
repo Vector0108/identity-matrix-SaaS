@@ -1,0 +1,34 @@
+@use "../../assets/scss/" as *;
+
+.container {
+  // position: absolute;
+  @include flex(center, center);
+  // height: 100vh;
+  // width: 100%;
+  color: #fff;
+  padding: 80px;
+  text-align: center;
+  top: 0;
+  // background: #252836;
+  z-index: 9999;
+  path {
+    fill: #fff !important;
+  }
+
+  .box {
+    @include flex(center, center, 30px, column);
+    padding: 30px;
+    border-radius: 30px;
+    max-width: 700px;
+
+    svg {
+      width: 100px;
+      height: 100px;
+    }
+
+    & {
+      width: 100%;
+      // max-width: 200px;
+    }
+  }
+}

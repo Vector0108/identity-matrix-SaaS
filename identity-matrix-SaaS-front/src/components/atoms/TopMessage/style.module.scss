@@ -1,0 +1,16 @@
+.message {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+
+  &_error {
+    background-color: red;
+  }
+
+  &_warning {
+    background-color: goldenrod;
+  }
+}

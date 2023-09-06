@@ -1,0 +1,89 @@
+@use "../../assets/scss/" as *;
+
+.main {
+  @include flex(center, center, 30px, column);
+  width: 100%;
+  color: $txt-color;
+  padding: 30px;
+
+  &_container {
+    border: 1px solid white;
+    width: 100%;
+    max-width: 700px;
+    gap: 15px;
+    border-radius: 12px;
+
+    &_title {
+      padding: 20px;
+
+      @include mobile {
+        font-size: 27px;
+      }
+    }
+
+    &_details {
+      padding: 20px;
+
+      &_inputs {
+        @include flex(center, center, 10px, column);
+        width: 100%;
+      }
+
+      &_actions {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+        margin-top: 15px;
+      }
+
+      h5 {
+        margin-bottom: 5px;
+      }
+      h1 {
+        margin-top: 20px;
+        margin-bottom: 15px;
+
+        @include mobile {
+          font-size: 27px;
+        }
+      }
+      a {
+        color: $main-color;
+        text-decoration: underline;
+      }
+
+      button {
+        width: max-content;
+      }
+    }
+  }
+}
+
+.seperator {
+  border: 1px solid white;
+}
+
+.balance {
+  @include flex(center, center, 30px, column);
+  &_box {
+    @include flex(center, space-between);
+    gap: 10px;
+    width: 100%;
+    align-self: flex-end;
+
+    @include mobile {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+
+    p {
+      display: flex;
+      align-items: flex-end;
+      gap: 5px;
+    }
+  }
+}

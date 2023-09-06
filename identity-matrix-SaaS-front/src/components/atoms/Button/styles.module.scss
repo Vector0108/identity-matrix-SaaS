@@ -1,0 +1,40 @@
+@use '../../../assets/scss/' as *;
+
+.button {
+	width: 100%;
+	padding: 10px 15px;
+	background-color: $button-main-color;
+	outline: none;
+	border: none;
+	border-radius: 11px;
+	font-size: 14px;
+	font-weight: 400;
+	color: white;
+	cursor: pointer;
+
+	&:disabled{
+		background-color: #6d696946;
+		cursor: default;
+		border: none;
+	}
+
+	&_outline {
+		background-color: transparent;
+		border: 1px solid $button-main-color;
+	}
+
+	&_secondary {
+		background-color: $button-secondary-color;
+	}
+
+	&_smoke {
+		background-color: $button-smoke-color;
+		color: #333;
+	}
+
+	&_white {
+		background-color: $button-white-color;
+		color: #000;
+		font-size: 19px;
+	}
+}

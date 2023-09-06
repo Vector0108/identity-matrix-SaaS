@@ -1,0 +1,29 @@
+@use "../../assets/scss/" as *;
+
+
+.container {
+	&_links {
+		display: flex;
+		// width: max-content;
+		width: 50%;
+		position: relative;
+		input {
+		  display: inline-block;
+		  padding: 15px 20px !important;
+		}
+	  
+		button {
+		  position: absolute;
+		  // width: 70%!important;
+		  border-top-left-radius: 0;
+		  border-bottom-left-radius: 0;
+		  margin-left: -5px;
+		  top: 0;
+		  right: -140px;
+		  padding: 15px 20px !important;
+		}
+	  
+		@include flex(center, flex-start, 0px);
+	  }
+}
+

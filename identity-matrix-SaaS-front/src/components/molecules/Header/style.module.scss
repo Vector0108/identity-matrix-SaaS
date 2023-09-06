@@ -1,0 +1,112 @@
+@use "../../../assets/scss/" as *;
+
+.header {
+  @include flex(center, center);
+  width: 100%;
+
+  &_container{
+    @include flex(center, space-between);
+    width: 100%;
+    max-width: $container-width;
+  }
+  
+  padding: 10px 15px;
+  background-color: $body-bg;
+  color: white;
+
+  a {
+    display: flex;
+  }
+
+  &_logo {
+    width: 200px;
+  }
+
+  &_nav {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    &_burger {
+      display: none;
+    }
+
+    &_popup {
+      background-color: rgb(37, 40, 54, 0.7);
+      height: 70vh;
+    }
+
+    button {
+      width: max-content;
+      height: max-content;
+    }
+
+    .dropdown {
+      position: relative;
+      background-color: rgba(245, 245, 245, 0.39);
+      padding: 9px;
+      border-radius: 11px;
+      transition: all 0.5s;
+      @include flex(center, center, 10px);
+
+      svg {
+        width: 15px;
+        height: 15px;
+        path {
+          fill: #fff;
+        }
+      }
+      &:hover {
+        transition: all 0.5s;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      &:hover .dropdown_item {
+        display: block;
+      }
+
+      &_item {
+        display: none;
+        position: absolute;
+        top: 36px;
+        left: 0;
+        background-color: rgba(185, 185, 185, 0.39);
+        padding: 10px;
+        width: 100%;
+        border-bottom-left-radius: 11px;
+        border-bottom-right-radius: 11px;
+
+        a {
+          color: #fff;
+        }
+      }
+    }
+
+    @include mobile {
+      display: none;
+      &_burger {
+        display: block;
+      }
+    }
+
+    @include middle {
+      display: none;
+      &_burger {
+        display: block;
+      }
+    }
+
+    @include tablet {
+      display: none;
+      &_burger {
+        display: block;
+      }
+    }
+  }
+  @include tablet {
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

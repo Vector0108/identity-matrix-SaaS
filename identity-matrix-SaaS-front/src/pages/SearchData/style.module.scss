@@ -1,0 +1,40 @@
+@use '../../assets/scss/' as *;
+
+.container {
+	min-height: calc(100vh - $header-height);
+	@include flex(center, center);
+	padding: 50px 20px;
+	width: 100%;
+
+	.result {
+		@include flex(center, center, 20px, column);
+	}
+
+	.table {
+		width: 100%;
+		max-width: 1000px;
+
+		&_desc {
+			margin-top: 2px;
+			font-size: 13px;
+		}
+
+		.btns {
+			@include flex(center, center, 10px);
+
+			.btn{
+				width: max-content;
+				margin-top: 20px;
+			}
+		}
+	}
+	&_items {
+		@include flex(center, center, 20px, column);
+		color: #fff;
+		width: 100%;
+
+		h1 {
+			font-size: 29px;
+		}
+	}
+}
